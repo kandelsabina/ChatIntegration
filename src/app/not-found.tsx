@@ -13,7 +13,7 @@ export default function Error() {
       <Text c={'#53545C'} fw={500}>Oops! The page you’re looking for doesn’t exist or may have been moved.</Text>
       <div className="flex gap-4">
 
-        <Link href="/inventory" passHref>
+        <Link href="/chat" passHref>
           <Button color='#21749E'>Go Back To Homepage</Button>
         </Link>
       </div>

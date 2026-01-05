@@ -89,7 +89,7 @@ export function Sidebar({ isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMo
   // Refactored the core content into a reusable fragment
   const sidebarInnerContent = (
     <>
-      <div className="flex justify-center mb-4 cursor-pointer" onClick={() => handleNavigation('/inventory')}>
+      <div className="flex justify-center mb-4 cursor-pointer" onClick={() => handleNavigation('/chat')}>
         <Image
           src={!isMobile && isCollapsed ? '/collapsedLogo.png' : '/logo.png'}
           alt="Elites Logo"
@@ -110,20 +110,28 @@ export function Sidebar({ isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMo
         ))}
       </div>
 
-      <div className="px-3 flex flex-col gap-1">
-        <UnstyledButton onClick={() => handleNavigation('/inventory/purchaseOrders')} className="custom-bottom-button create-order-btn">
-          <div className="flex items-center gap-2">
-            <IconlyPaperPlus />
-            <span>Create Order</span>
-          </div>
-        </UnstyledButton>
-        <UnstyledButton onClick={() => router.push('/login')} className="custom-bottom-button logout-btn">
-          <div className="flex items-center gap-2">
-            <IconlyLogout />
-            <span>Logout</span>
-          </div>
-        </UnstyledButton>
-      </div>
+     <div className="px-3 flex flex-col gap-1">
+  <UnstyledButton
+    onClick={() => handleNavigation('/inventory/purchaseOrders')}
+    className={`custom-bottom-button create-order-btn ${!(!isCollapsed || isMobile) ? 'collapsed' : ''}`}
+  >
+    <div className={`flex items-center ${!isCollapsed || isMobile ? 'gap-2' : 'justify-center'}`}>
+      <IconlyPaperPlus size={!isCollapsed || isMobile ? 18 : 22} />
+      {(!isCollapsed || isMobile) && <span>Create Order</span>}
+    </div>
+  </UnstyledButton>
+
+  <UnstyledButton
+    onClick={() => router.push('/login')}
+    className={`custom-bottom-button logout-btn ${!(!isCollapsed || isMobile) ? 'collapsed' : ''}`}
+  >
+    <div className={`flex items-center ${!isCollapsed || isMobile ? 'gap-2' : 'justify-center'}`}>
+      <IconlyLogout size={!isCollapsed || isMobile ? 18 : 22} />
+      {(!isCollapsed || isMobile) && <span>Logout</span>}
+    </div>
+  </UnstyledButton>
+</div>
+
     </>
   )
 
