@@ -31,7 +31,7 @@ export function Sidebar({ isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMo
   const pathname = usePathname()
 
   const navigationItems = [
-    { key: 'dashboard', label: 'Dashboard', icon: IconlyCategory, path: '/dashboard/dashboard' },
+    { key: 'dashboard', label: 'Dashboard', icon: IconlyCategory, path: '/dashboard' },
     { key: 'orders', label: 'Orders', icon: IconlyBag, path: '/orders' },
     { key: 'comments', label: 'Comments', icon: IconlyEdit, path: '/comments' },
     { key: 'fare-charges', label: 'Fare & Charges', icon: IconlySwap, path: '/fare-charges' },

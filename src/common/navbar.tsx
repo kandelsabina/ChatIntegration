@@ -53,7 +53,7 @@ export function Navbar({
         </button>
         
         <Text fw={500} fz="lg" className="truncate">
-         Chat Integration
+         Chat Platform 
         </Text>
       </Box>
 
