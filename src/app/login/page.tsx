@@ -93,7 +93,7 @@ export default function Login() {
       // Redirect after login
     // Redirect after login
 const redirectTo =
-  localStorage.getItem("redirect_after_login") || "/dashboard/dashboard";
+  localStorage.getItem("redirect_after_login") || "/chat";
 
 localStorage.removeItem("redirect_after_login");
 router.push(redirectTo);
